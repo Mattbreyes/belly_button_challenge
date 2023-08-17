@@ -29,6 +29,7 @@ function init() {
         // Set the first sample from the list
         let sample = names[0];
         console.log(sample);
+        
         // Build the initial plots
         getInfo(sample);
         BarPlot(sample);
