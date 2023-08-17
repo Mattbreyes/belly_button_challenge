@@ -7,7 +7,8 @@ d3.json(url).then(function(data) {
 });
 
 
-function init() {
+function init() 
+{
 
     // load data with d3
     let dropdownMenu = d3.select("#selDataset");
@@ -28,6 +29,7 @@ function init() {
 
         // Set the first sample from the list
         let sample = names[0];
+        
         console.log(sample);
         
         // Build the initial plots
@@ -38,7 +40,8 @@ function init() {
 };
 
 // get info
-function getInfo(sample) {
+function getInfo(sample) 
+{
 
     // load data with d3
     d3.json(url).then((data) => {
@@ -71,7 +74,8 @@ function getInfo(sample) {
 };
 
 // Bar Chart
-function BarPlot(sample) {
+function BarPlot(sample) 
+{
 
     // load data with d3
     d3.json(url).then((data) => {
@@ -107,19 +111,19 @@ function BarPlot(sample) {
 
         // layout
         let layout = {
-            title: "Top 10 OTUs Present"
+            title: "Top 10 OTUs"
         };
 
-        // Call Plotly to plot the bar chart
         Plotly.newPlot("bar", [trace], layout)
     });
 };
 
-// Function that builds the bubble chart
+// bubble chart
 function BubbleChart(sample) {
 
     // load data with d3
-    d3.json(url).then((data) => {
+    d3.json(url).then((data) => 
+    {
         
         let sampleInfo = data.samples;
 
@@ -135,7 +139,7 @@ function BubbleChart(sample) {
         let sample_values = valueData.sample_values;
         
         // chart specs
-        let trace1 = {
+        let trace = {
             x: otu_ids,
             y: sample_values,
             text: otu_labels,
@@ -155,12 +159,13 @@ function BubbleChart(sample) {
         };
 
         
-        Plotly.newPlot("bubble", [trace1], layout)
+        Plotly.newPlot("bubble", [trace], layout)
     });
 };
 
 // Update data when dropdown changed
-function optionChanged(value) { 
+function optionChanged(value) 
+{ 
 
     // Log the new value
     console.log(value); 
